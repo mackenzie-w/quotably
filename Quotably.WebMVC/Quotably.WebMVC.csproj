@@ -201,7 +201,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -281,6 +280,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Quotably.Data\Quotably.Data.csproj">
+      <Project>{5ce72663-2c56-4ccf-a941-6d609a81faba}</Project>
+      <Name>Quotably.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quotably.Models\Quotably.Models.csproj">
+      <Project>{334a2d58-552c-4838-8888-f52e769d74c9}</Project>
+      <Name>Quotably.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quotably.Services\Quotably.Services.csproj">
+      <Project>{a9b78ca3-8c01-49ec-a0a9-67bc4a230150}</Project>
+      <Name>Quotably.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
