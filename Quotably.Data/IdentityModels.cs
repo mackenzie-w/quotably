@@ -32,6 +32,7 @@ namespace Quotably.WebMVC.Models
             return new ApplicationDbContext();
         }
 
+        //TODO: Add DbSet here
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
