@@ -53,12 +53,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Author.cs" />
+    <Compile Include="Book.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\201809041827201_initial-create.cs" />
+    <Compile Include="Migrations\201809041827201_initial-create.Designer.cs">
+      <DependentUpon>201809041827201_initial-create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BookQuote.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201809041827201_initial-create.resx">
+      <DependentUpon>201809041827201_initial-create.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -53,11 +53,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorCreate.cs" />
+    <Compile Include="AuthorDetail.cs" />
+    <Compile Include="AuthorEdit.cs" />
+    <Compile Include="AuthorListItem.cs" />
+    <Compile Include="BookCreate.cs" />
+    <Compile Include="BookDetail.cs" />
+    <Compile Include="BookEdit.cs" />
+    <Compile Include="BookListItem.cs" />
+    <Compile Include="BookQuoteCreate.cs" />
+    <Compile Include="BookQuoteDetail.cs" />
+    <Compile Include="BookQuoteEdit.cs" />
+    <Compile Include="BookQuoteListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Quotably.Data\Quotably.Data.csproj">
+      <Project>{5CE72663-2C56-4CCF-A941-6D609A81FABA}</Project>
+      <Name>Quotably.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

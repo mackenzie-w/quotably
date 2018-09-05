@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Quotably.Data;
 
 namespace Quotably.WebMVC.Models
 {
@@ -32,6 +33,9 @@ namespace Quotably.WebMVC.Models
             return new ApplicationDbContext();
         }
 
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<BookQuote> BookQuotes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -45,7 +49,6 @@ namespace Quotably.WebMVC.Models
 
         }
     }
-
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
     {

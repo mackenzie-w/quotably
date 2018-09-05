@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Quotably.Models.BookListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="text-align:center" ;>Books</h2>
+
+<p style="text-align:center" ;>
+    @Html.ActionLink("Add New Book", "Create") &emsp;
+    @Html.ActionLink("Back to Quotes", "Index", "BookQuote") &emsp;
+    @Html.ActionLink("Authors", "Index", "Author")
+</p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Author.AuthorLastName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </th>
+        </tr>
+    </thead>
+
+
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.Author.AuthorLastName)
+                </td>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td scope="row">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BookID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.BookID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BookID })
+                </td>
+            </tr>
+        </tbody>
+
+    }
+
+</table>
